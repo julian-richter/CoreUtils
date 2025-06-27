@@ -14,14 +14,14 @@ extern "C" {
   /** @brief Returns true if it's MacOS */
 bool isMacos();
 
-  /** @brief Returns true if its Linux */
+  /** @brief Returns true if it's Linux */
 
 bool isLinux();
 
-  /** @brief Returns true if its FreeBSD */
+  /** @brief Returns true if it's FreeBSD */
 bool isFreeBSD();
 
-  /** @brief Returns true if its OpenBSD */
+  /** @brief Returns true if it's OpenBSD */
 bool isOpenBSD();
 
   /** @brief Returns true if OS is Windows */
