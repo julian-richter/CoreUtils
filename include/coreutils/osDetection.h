@@ -14,29 +14,18 @@ extern "C" {
   * @brief Contains declarations and definitions related to operating system detection.
   */
 typedef struct {
- int Windows;
- int MacOS;
- int Linux;
- int FreeBSD;
- int OpenBSD;
- int Unix;
-    int Unknown;
+  int Windows;
+  int MacOS;
+  int Linux;
+  int FreeBSD;
+  int OpenBSD;
+  int Unix;
+  int Unknown;
 } OSTypes;
 
-/**
- * @file osDetection.c
- * @brief Pointer to the `OSTypes` struct holding constants representing different operating systems.
- *
- * The `ptrOsTypes` variable points to a statically allocated `OSTypes` structure in memory.
- * It allows external files to access predefined constants representing OS types.
- *
- * Use `ptrOsTypes` to determine the operating system during runtime by comparing the value
- * returned by `getOs()` against the values defined in the `OSTypes` structure.
- *
- * @author Julian Richter
- * @version 1.0
- * @since 2025-06-26
- */
+
+
+    /** @brief Access to OS type constants */
 extern const OSTypes* ptrOsTypes;
 
 

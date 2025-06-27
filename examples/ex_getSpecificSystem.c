@@ -6,9 +6,12 @@
 #include <coreutils/library.h>
 
 int main() {
-    if(getOs() == ptrOsTypes->MacOS) {
+
+    int os = getOs();
+
+    if(os == ptrOsTypes->MacOS) {
         printf("Hello, macOS!\n");
-    } else if(getOs() == ptrOsTypes->Linux) {
+    } else if(os == ptrOsTypes->Linux) {
         printf("Hello, Linux!\n");
     } else {
         printf("Hello, Unknown!\n");

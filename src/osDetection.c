@@ -4,6 +4,13 @@
 #include <coreutils/osDetection.h>
 #include "coreutils/library.h"
 
+#define OS_UNKNOWN 0
+#define OS_WINDOWS 1
+#define OS_MACOS 2
+#define OS_LINUX 3
+#define OS_FREEBSD 4
+#define OS_OPENBSD 5
+#define OS_UNIX 6
 /**
  * @file osDetection.c
  * @brief Defines the constant `osTypes` which maps operating systems to integer values.
@@ -16,13 +23,13 @@
  * @since 2025-06-26
  */
 static const OSTypes osTypes = {
-    .Windows = 1,
-    .MacOS = 2,
-    .Linux = 3,
-    .FreeBSD = 4,
-    .OpenBSD = 5,
-    .Unix = 6,
-    .Unknown = 0
+    .Windows =OS_WINDOWS,
+    .MacOS = OS_MACOS,
+    .Linux = OS_LINUX,
+    .FreeBSD = OS_FREEBSD,
+    .OpenBSD = OS_OPENBSD,
+    .Unix = OS_UNIX,
+    .Unknown = OS_UNKNOWN
 };
 
 /**

@@ -4,6 +4,7 @@
 #include <coreutils/library.h>
 #include <coreutils/osDetection.h>
 
+
 /**
  * @brief Determines if the system is macOS.
  *
@@ -17,9 +18,9 @@
  */
 bool isMacos() {
     #if defined(__APPLE__) && defined(__MACH__)
-        return 1;
+        return true;
     #else
-        return 0;
+        return false;
     #endif
 }
 
@@ -36,9 +37,9 @@ bool isMacos() {
  */
 bool isLinux() {
     #if defined(__linux__)
-        return 1;
+        return true;
     #else
-        return 0;
+        return false;
     #endif
 }
 
@@ -57,9 +58,9 @@ bool isLinux() {
  */
 bool isWindows() {
     #if defined(_WIN32) || defined(_WIN64)
-        return 1;
+        return true;
     #else
-        return 0;
+        return false;
     #endif
 }
 
@@ -77,9 +78,9 @@ bool isWindows() {
  */
 bool isUnix() {
     #if defined(__unix__) || defined(__unix) || (defined(__APPLE__) && defined(__MACH__))
-        return 1;
+        return true;
     #else
-        return 0;
+        return false;
     #endif
 }
 
@@ -96,9 +97,9 @@ bool isUnix() {
  */
 bool isFreeBSD() {
     #if defined(__FreeBSD__)
-        return 1;
+        return true;
     #else
-        return 0;
+        return false;
     #endif
 }
 
@@ -115,9 +116,9 @@ bool isFreeBSD() {
  */
 bool isOpenBSD() {
     #if defined(__OpenBSD__)
-        return 1;
+        return true;
     #else
-        return 0;
+        return false;
     #endif
 }
 
@@ -136,20 +137,5 @@ bool isOpenBSD() {
  * @return True if the operating system is unknown, otherwise false.
  */
 bool isUnknown() {
-    // Create a local OSTypes variable
-    OSTypes types = {0};
-
-
-    // set the appropriate flags
-    types.Windows = isWindows();
-    types.MacOS = isMacos();
-    types.Linux = isLinux();
-    types.FreeBSD = isFreeBSD();
-    types.OpenBSD = isOpenBSD();
-    types.Unix = isUnix();
-
-    // the os is unknown if none of the known types are detected
-    types.Unknown = !(types.Windows || types.MacOS || types.Linux || types.FreeBSD || types.OpenBSD || types.Unix);
-
-    return types.Unknown;
+    return !(isWindows() || isMacos() || isLinux() || isFreeBSD() || isOpenBSD() || isUnix());
 }

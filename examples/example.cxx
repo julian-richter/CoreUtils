@@ -7,10 +7,11 @@
 
 int main() {
     if (isFreeBSD()) {
-        std::cout << "Hello, macOS!" << std::endl;
+        std::cout << "Hello, FreeBSD!" << std::endl;
     } else if (isLinux()) {
         std::cout << "Hello, Linux!" << std::endl;
     } else {
         std::cout << ptrOsTypes->Unknown << std::endl;
     }
+    return 0;
 }
